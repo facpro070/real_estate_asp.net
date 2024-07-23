@@ -5,7 +5,7 @@ namespace RealEstate.Shared.Data.Repository
 {
     public class EstatesDbRepository : Repository, IEstatesDbRepository
     {
-        public EstatesDbRepository(EstatesDBContext context, ICacheService cacheService)
+        public EstatesDbRepository(CombinedDBContext context, ICacheService cacheService)
         {
             Context = context;
             _cacheService = cacheService;

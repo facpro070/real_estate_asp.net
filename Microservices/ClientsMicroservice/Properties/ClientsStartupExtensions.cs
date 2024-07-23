@@ -27,7 +27,7 @@ namespace ClientsMicroservice.Properties
             services.AddDbContextPool<ClientsDBContext>(options =>
                 options.UseNpgsql(GlobalConnectionStrings.Clients_MicroDB_Connection));
             
-            services.AddDbContextPool<CombinedAppContext>(options =>
+            services.AddDbContextPool<CombinedDBContext>(options =>
                  options.UseNpgsql(GlobalConnectionStrings.RealEstate_DB_Connection));
 
             // Repositories
