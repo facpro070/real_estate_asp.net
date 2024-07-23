@@ -10,6 +10,7 @@ using System.Net;
 
 using System.IO;
 using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace EstatesMicroservice.Controllers
 {
@@ -282,9 +283,9 @@ namespace EstatesMicroservice.Controllers
         /// </remarks>
         [HttpGet("mockResponse")]
         [ProducesResponseType(typeof(List<EstateDTO>), (int)HttpStatusCode.OK)]
-        public List<EstateDTO> Mock()
+        public IActionResult Mock()
         {
-            string json = File.ReadAllText("estatesData.json");
+            string json = System.IO.File.ReadAllText("estatesData.json");
             Console.WriteLine(json);
 
             List<EstateDTO> result = JsonConvert.DeserializeObject<List<EstateDTO>>(json);
